@@ -43,7 +43,7 @@ import GhssLogo from './assets/education_logo/ghsslogo.jpg';
 
 // Project Section Logo's
 import EduStayLogo from './assets/work_logo/EduStay.png';
-import LapZoneLogo from './assets/work_logo/Lapzone.png';
+import LapZoneLogo from './assets/work_logo/LapZone.png';
 
 
 export const SkillsInfo = [
