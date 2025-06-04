@@ -7,7 +7,7 @@ import PhpLogo from './assets/tech_logo/PhpLogo.png';
 import DjangoLogo from './assets/tech_logo/DjangoIcon.png';
 import Apis from './assets/tech_logo/Apis.png';
 import Laravel from './assets/tech_logo/laravel.png';
-import PycharmIcon from './assets/tech_logo/PycharmIcon.png';
+import PycharmIcon from "./assets/tech_logo/pycharmIcon.png";
 
 import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
 
