@@ -90,15 +90,14 @@ const Work = () => {
       {/* Modal for Project Details */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 overflow-y-auto">
-          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-xl mx-auto overflow-hidden relative">
-            <div className="flex justify-end p-4">
-              <button
-                onClick={handleCloseModal}
-                className="text-white text-3xl font-bold hover:text-blue-500"
-              >
-                &times;
-              </button>
-            </div>
+          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-xl mx-auto relative pt-12">
+            {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-blue-500 z-10"
+            >
+              &times;
+            </button>
 
             <div className="flex flex-col">
               <div className="w-full flex justify-center px-4">
