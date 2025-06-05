@@ -29,6 +29,7 @@ import figmaLogo from './assets/tech_logo/figma.png';
 
 import vercelLogo from './assets/tech_logo/vercel.png';
 import postgreLogo from './assets/tech_logo/postgre.png';
+import DockerLogo from './assets/tech_logo/docker.png'
 
 
 // Experience Section Logo's
@@ -98,6 +99,8 @@ export const SkillsInfo = [
       { name: 'Postman', logo: postmanLogo },
       { name: 'Vercel', logo: vercelLogo },
       { name: 'Figma', logo: figmaLogo },
+      { name: 'Docker', logo: DockerLogo },
+
     ],
   },
 ];
@@ -117,6 +120,7 @@ export const SkillsInfo = [
         "JavaScript",
         "Tailwind CSS",
         "React JS",
+        "Python",
         "Django",
         "REST API",
         "Node JS",

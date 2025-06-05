@@ -90,7 +90,7 @@ const Work = () => {
       {/* Modal for Project Details */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 overflow-y-auto">
-          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-3xl mx-auto overflow-hidden relative">
+          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-xl mx-auto overflow-hidden relative">
             <div className="flex justify-end p-4">
               <button
                 onClick={handleCloseModal}
@@ -108,14 +108,14 @@ const Work = () => {
                   className="w-[95%] object-contain rounded-xl shadow-2xl"
                 />
               </div>
-              <div className="p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-4">
+              <div className="p-4 sm:p-5">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                   {selectedProject.title}
                 </h3>
-                <p className="text-gray-400 text-xs sm:text-sm md:text-base mb-6">
+                <p className="text-gray-400 text-sm mb-4">
                   {selectedProject.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -125,16 +125,16 @@ const Work = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => handleCodeClick(selectedProject)}
-                    className="flex-1 bg-gray-800 hover:bg-blue-800 text-gray-400 px-4 py-2 rounded-xl text-center text-sm sm:text-base font-semibold"
+                    className="flex-1 bg-gray-800 hover:bg-blue-800 text-gray-400 px-4 py-2 rounded-xl text-sm font-semibold"
                   >
                     View Code
                   </button>
                   <button
                     onClick={() => handleLiveClick(selectedProject)}
-                    className="flex-1 bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-center text-sm sm:text-base font-semibold"
+                    className="flex-1 bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-sm font-semibold"
                   >
                     View Live
                   </button>
@@ -157,7 +157,8 @@ const Work = () => {
             </button>
             <h2 className="text-xl font-bold mb-3 text-center">🚧 Coming Soon</h2>
             <p className="text-center text-sm text-gray-700">
-             The live version of this project is on the way. Stay tuned for updates!
+              The live version of this project is on the way. Stay tuned for
+              updates!
             </p>
           </div>
         </div>
@@ -173,10 +174,13 @@ const Work = () => {
             >
               &times;
             </button>
-            <h2 className="text-xl font-bold mb-3 text-center">🛠️ Code Under Development</h2>
+            <h2 className="text-xl font-bold mb-3 text-center">
+              🛠️ Code Under Development
+            </h2>
             <p className="text-center text-sm text-gray-700 mb-4">
-  This project is still under development. However, you can explore the current source code on GitHub.
-</p>
+              This project is still under development. However, you can explore
+              the current source code on GitHub.
+            </p>
             <div className="text-center">
               <a
                 href={selectedProject.github}
