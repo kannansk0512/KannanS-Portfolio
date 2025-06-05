@@ -157,7 +157,7 @@ const Work = () => {
             </button>
             <h2 className="text-xl font-bold mb-3 text-center">🚧 Coming Soon</h2>
             <p className="text-center text-sm text-gray-700">
-              This project is not live yet. Stay tuned!
+             The live version of this project is on the way. Stay tuned for updates!
             </p>
           </div>
         </div>
@@ -175,8 +175,8 @@ const Work = () => {
             </button>
             <h2 className="text-xl font-bold mb-3 text-center">🛠️ Code Under Development</h2>
             <p className="text-center text-sm text-gray-700 mb-4">
-              This code is not yet completed, but you can still view it on GitHub.
-            </p>
+  This project is still under development. However, you can explore the current source code on GitHub.
+</p>
             <div className="text-center">
               <a
                 href={selectedProject.github}
