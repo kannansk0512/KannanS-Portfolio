@@ -168,8 +168,9 @@ export const SkillsInfo = [
         "A feature-rich eCommerce web application developed using React.js for the frontend and Django REST API for the backend, focused on providing a seamless platform for purchasing laptops. The app offers a dynamic product catalog, detailed laptop specifications, user authentication, shopping cart functionality, and secure checkout. With real-time data fetching, responsive design, and efficient API communication, this platform ensures a smooth and intuitive shopping experience for users seeking the latest in laptop technology.",
         image: LapZoneLogo,
       tags: ["HTML", "Tailwind CSS", "JavaScript", "React JS", "REST API","MySQL"],
-      github: "",
+      github: "https://github.com/kannansk0512/Lapzone",
       webapp: "",
+      isCodeComplete: true
     },
     {
       id: 1,
@@ -178,8 +179,9 @@ export const SkillsInfo = [
         "A powerful and student-focused full-stack application built with React.js and Django REST API integration, designed to help students easily discover the best training or internship opportunities along with nearby accommodation options. By entering preferences such as domain or location, the app fetches real-time data from a robust backend, offering verified listings of internships, training programs, and accommodation details. The clean and responsive interface ensures an intuitive user experience, making it a valuable platform for students planning their career paths",
       image: EduStayLogo,
       tags: ["HTML", "Tailwind CSS", "JavaScript", "React JS", "REST API","MySQL"],
-      github: "",
+      github: "https://github.com/kannansk0512/EduStay",
       webapp: "",
+      isCodeComplete: false
     }
    
   ];  

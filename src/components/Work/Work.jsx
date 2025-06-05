@@ -3,6 +3,8 @@ import { projects } from "../../constants";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showLivePopup, setShowLivePopup] = useState(false);
+  const [showCodePopup, setShowCodePopup] = useState(false);
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -10,6 +12,27 @@ const Work = () => {
 
   const handleCloseModal = () => {
     setSelectedProject(null);
+  };
+
+  const handleLiveClick = (project) => {
+    if (project.isLive) {
+      window.open(project.webapp, "_blank", "noopener noreferrer");
+    } else {
+      setShowLivePopup(true);
+    }
+  };
+
+  const handleCodeClick = (project) => {
+    if (project.isCodeComplete) {
+      window.open(project.github, "_blank", "noopener noreferrer");
+    } else {
+      setShowCodePopup(true);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowLivePopup(false);
+    setShowCodePopup(false);
   };
 
   return (
@@ -64,7 +87,7 @@ const Work = () => {
         ))}
       </div>
 
-      {/* Modal */}
+      {/* Modal for Project Details */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 overflow-y-auto">
           <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-3xl mx-auto overflow-hidden relative">
@@ -103,24 +126,66 @@ const Work = () => {
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => handleCodeClick(selectedProject)}
                     className="flex-1 bg-gray-800 hover:bg-blue-800 text-gray-400 px-4 py-2 rounded-xl text-center text-sm sm:text-base font-semibold"
                   >
                     View Code
-                  </a>
-                  <a
-                    href={selectedProject.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  </button>
+                  <button
+                    onClick={() => handleLiveClick(selectedProject)}
                     className="flex-1 bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-center text-sm sm:text-base font-semibold"
                   >
                     View Live
-                  </a>
+                  </button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Popup: Project Not Live */}
+      {showLivePopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="bg-white text-black rounded-lg shadow-2xl p-6 max-w-sm mx-auto relative">
+            <button
+              onClick={handleClosePopup}
+              className="absolute top-2 right-4 text-2xl text-gray-600 hover:text-red-500"
+            >
+              &times;
+            </button>
+            <h2 className="text-xl font-bold mb-3 text-center">🚧 Coming Soon</h2>
+            <p className="text-center text-sm text-gray-700">
+              This project is not live yet. Stay tuned!
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Popup: Code Not Completed */}
+      {showCodePopup && selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="bg-white text-black rounded-lg shadow-2xl p-6 max-w-sm mx-auto relative">
+            <button
+              onClick={handleClosePopup}
+              className="absolute top-2 right-4 text-2xl text-gray-600 hover:text-red-500"
+            >
+              &times;
+            </button>
+            <h2 className="text-xl font-bold mb-3 text-center">🛠️ Code Under Development</h2>
+            <p className="text-center text-sm text-gray-700 mb-4">
+              This code is not yet completed, but you can still view it on GitHub.
+            </p>
+            <div className="text-center">
+              <a
+                href={selectedProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-sm font-semibold"
+              >
+                View Unfinished Code
+              </a>
             </div>
           </div>
         </div>
