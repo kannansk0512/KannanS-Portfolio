@@ -7,11 +7,11 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32"
+      className="flex-grow py-8 px-4 sm:px-8 md:px-12 lg:px-32 font-sans mt-16 md:mt-24 lg:mt-32 overflow-hidden"
     >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
         {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+        <div className="w-full lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight text-white">
             Hi, I am
           </h1>
@@ -25,10 +25,10 @@ const About = () => {
                 text={[
                   'Fullstack Developer',
                   'React.js Developer',
-                  'Python Django Developer',       
+                  'Python Django Developer',
                   'API designer',
                   'Responsive Web Expert',
-                  'Problem-Solving Coder'
+                  'Problem-Solving Coder',
                 ]}
                 speed={80}
                 eraseSpeed={40}
@@ -40,7 +40,7 @@ const About = () => {
               />
             </span>
           </h3>
-          <p className="text-base sm:text-lg md:text-lg text-slate-300 mb-10 mt-8 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 mb-10 mt-8 leading-relaxed">
             I am a full-stack developer with 1 year of experience in building scalable web applications. Skilled in both front-end and back-end development, I work with modern technologies to create seamless user experiences and efficient solutions tailored to project needs.
           </p>
           <a
@@ -50,7 +50,8 @@ const About = () => {
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
             style={{
               background: 'linear-gradient(90deg, #2563eb, #1e40af)',
-              boxShadow: '0 0 2px #2563eb, 0 0 10px #2563eb, 0 0 30px #2563eb',
+              boxShadow:
+                '0 0 2px #2563eb, 0 0 10px #2563eb, 0 0 30px #2563eb',
             }}
           >
             DOWNLOAD RESUME
@@ -58,9 +59,9 @@ const About = () => {
         </div>
 
         {/* Right Side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end -mt-8 md:-mt-16">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <Tilt
-            className="w-44 h-44 sm:w-60 sm:h-60 md:w-[24rem] md:h-[24rem] border-4 border-blue-500 rounded-xl"
+            className="w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-[24rem] lg:h-[24rem] border-4 border-blue-500 rounded-xl"
             tiltMaxAngleX={20}
             tiltMaxAngleY={20}
             perspective={1000}

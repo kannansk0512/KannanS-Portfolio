@@ -15,7 +15,7 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-16 px-4 sm:px-6 md:px-10 lg:px-[15vw] font-sans bg-black"
+      className="min-h-screen py-16 px-4 sm:px-6 md:px-10 lg:px-[15vw] font-sans bg-black"
     >
       {/* Section Title */}
       <div className="text-center mb-12">
@@ -66,7 +66,7 @@ const Work = () => {
 
       {/* Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 overflow-y-auto">
           <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-3xl mx-auto overflow-hidden relative">
             <div className="flex justify-end p-4">
               <button

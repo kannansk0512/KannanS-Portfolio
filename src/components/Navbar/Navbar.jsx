@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
+      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[20vw] ${
         isScrolled
           ? "bg-[#0a192f] bg-opacity-80 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-[#cbd5e1] font-medium">
+        <ul className="hidden lg:flex space-x-8 text-[#cbd5e1] font-medium">
           {menuItems.map((item) => (
             <li
               key={item.path}
@@ -61,7 +61,7 @@ const Navbar = () => {
         </ul>
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden lg:flex space-x-4">
           <a
             href="https://github.com/kannansk0512"
             target="_blank"
@@ -81,7 +81,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           {isOpen ? (
             <FiX
               className="text-3xl text-[#2563eb] cursor-pointer"
@@ -98,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Items */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-gradient-to-br from-[#0a192f] via-[#0a192f] to-[#1e40af] backdrop-blur-md z-50 rounded-lg shadow-xl md:hidden">
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-gradient-to-br from-[#0a192f] via-[#0a192f] to-[#1e40af] backdrop-blur-md z-50 rounded-lg shadow-xl lg:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4 text-[#cbd5e1] font-medium">
             {menuItems.map((item) => (
               <li
