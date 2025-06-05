@@ -44,7 +44,7 @@ const About = () => {
             I am a full-stack developer with 1 year of experience in building scalable web applications. Skilled in both front-end and back-end development, I work with modern technologies to create seamless user experiences and efficient solutions tailored to project needs.
           </p>
           <a
-            href="https://drive.google.com/file/d/1iYs6NoCZ3khYrf3-T4DKt3Ysb0U9u2OH/view?usp=sharing"
+            href="https://drive.google.com/file/d/16eEOYP6yG44UvvOdT_Na8rN66EPn5rlI/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
