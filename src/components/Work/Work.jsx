@@ -89,25 +89,28 @@ const Work = () => {
 
       {/* Modal for Project Details */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 overflow-y-auto">
-          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-xl mx-auto relative pt-12">
-            {/* Close Button */}
-            <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-blue-500 z-10"
-            >
-              &times;
-            </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-2 sm:p-4 overflow-y-auto">
+          <div className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-xl mx-auto relative max-h-[90vh] overflow-y-auto">
+            {/* Close button */}
+            <div className="sticky top-0 z-10 bg-gray-900 p-4 flex justify-end">
+              <button
+                onClick={handleCloseModal}
+                className="text-white text-3xl font-bold hover:text-blue-500"
+              >
+                &times;
+              </button>
+            </div>
 
-            <div className="flex flex-col">
-              <div className="w-full flex justify-center px-4">
+            {/* Modal Content */}
+            <div className="flex flex-col px-4 pb-6">
+              <div className="w-full flex justify-center">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-[95%] object-contain rounded-xl shadow-2xl"
+                  className="w-full sm:w-[95%] object-contain rounded-xl shadow-2xl"
                 />
               </div>
-              <div className="p-4 sm:p-5">
+              <div className="pt-4 sm:pt-6">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                   {selectedProject.title}
                 </h3>
