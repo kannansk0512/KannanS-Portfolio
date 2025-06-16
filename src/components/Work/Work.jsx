@@ -5,6 +5,7 @@ const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showLivePopup, setShowLivePopup] = useState(false);
   const [showCodePopup, setShowCodePopup] = useState(false);
+  const [codePopupMessage, setCodePopupMessage] = useState("");
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -26,6 +27,12 @@ const Work = () => {
     if (project.isCodeComplete) {
       window.open(project.github, "_blank", "noopener noreferrer");
     } else {
+      // Custom popup message for ongoing projects like HireSpot
+      if (project.title === "HireSpot") {
+        setCodePopupMessage("This project is currently ongoing. Full source code will be available once development is complete.");
+      } else {
+        setCodePopupMessage("This project is still under development. However, you can explore the current source code on GitHub.");
+      }
       setShowCodePopup(true);
     }
   };
@@ -33,6 +40,7 @@ const Work = () => {
   const handleClosePopup = () => {
     setShowLivePopup(false);
     setShowCodePopup(false);
+    setCodePopupMessage("");
   };
 
   return (
@@ -166,7 +174,7 @@ const Work = () => {
         </div>
       )}
 
-      {/* Popup: Code Not Completed */}
+      {/* Popup: Code Message (Custom for Ongoing or Incomplete) */}
       {showCodePopup && selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
           <div className="bg-white text-black rounded-lg shadow-2xl p-6 max-w-sm mx-auto relative">
@@ -176,23 +184,22 @@ const Work = () => {
             >
               &times;
             </button>
-            <h2 className="text-xl font-bold mb-3 text-center">
-              🛠️ Code Under Development
-            </h2>
+            <h2 className="text-xl font-bold mb-3 text-center">🛠️ Info</h2>
             <p className="text-center text-sm text-gray-700 mb-4">
-              This project is still under development. However, you can explore
-              the current source code on GitHub.
+              {codePopupMessage}
             </p>
-            <div className="text-center">
-              <a
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-sm font-semibold"
-              >
-                View Unfinished Code
-              </a>
-            </div>
+            {selectedProject.github && (
+              <div className="text-center">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-xl text-sm font-semibold"
+                >
+                  View Code on GitHub
+                </a>
+              </div>
+            )}
           </div>
         </div>
       )}
